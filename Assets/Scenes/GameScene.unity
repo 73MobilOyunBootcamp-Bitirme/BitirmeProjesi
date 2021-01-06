@@ -708,75 +708,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 786414072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 809cc80c9501377439019a1eac3379c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mousex: 0
-  speed: 5
-  min: -3.5
-  max: 3.5
-  newpos: {x: 0, y: 0, z: 0}
---- !u!1 &1303077698
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1303077700}
-  - component: {fileID: 1303077699}
-  m_Layer: 0
-  m_Name: SpawnFood
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1303077699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303077698}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feae478f797f85442a0aa1300dc77c4e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  foodPrefabs:
-  - {fileID: 3422511495751206304, guid: 08e0e1c8217e99745bbd193385537d64, type: 3}
-  - {fileID: 4343362967507692404, guid: d9def4eb908b1924f8c80f0b202205ae, type: 3}
-  - {fileID: 4196876533316976260, guid: 2aafafd3e397078488769d2dafd0103a, type: 3}
-  - {fileID: 6338662320274745086, guid: 029b4a02081a8eb469500f00b6802d8c, type: 3}
-  spawnPozX: 3.5
-  spawnPozY: 10
-  startDelay: 1
-  spawnInternal: 1.5
-  lowBound: -0.7
---- !u!4 &1303077700
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1303077698}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.03, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1436104589
 GameObject:
   m_ObjectHideFlags: 0
@@ -972,7 +903,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.8000001, g: 0.8000001, b: 0.8000001, a: 0}
+  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
