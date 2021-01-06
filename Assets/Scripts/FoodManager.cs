@@ -5,11 +5,11 @@ using UnityEngine;
 public class FoodManager : MonoBehaviour
 {
     public GameObject[] foodPrefabs;
-    public float spawnPozX = 0.1f;
-    public float spawnPozY = 1.4f;
-    public float spawnPozZ = -12.4f;
-    public float startDelay = 0.1f;
-    public float spawnInternal = 0.5f;
+    public float spawnPozX = 0.3f;
+    public float spawnPozY = 1.7f;
+    public float spawnPozZ = -12.0f;
+    public float startDelay = 1.0f;
+    public float spawnInternal = 1.0f;
 
     
     void Start()

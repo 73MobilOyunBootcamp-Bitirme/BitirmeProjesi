@@ -738,15 +738,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefabs:
-  - {fileID: 3422511495751206304, guid: 08e0e1c8217e99745bbd193385537d64, type: 3}
-  - {fileID: 4343362967507692404, guid: d9def4eb908b1924f8c80f0b202205ae, type: 3}
-  - {fileID: 4196876533316976260, guid: 2aafafd3e397078488769d2dafd0103a, type: 3}
-  - {fileID: 6338662320274745086, guid: 029b4a02081a8eb469500f00b6802d8c, type: 3}
+  - {fileID: 5270052339273272526, guid: 08e0e1c8217e99745bbd193385537d64, type: 3}
+  - {fileID: 7894889115659172670, guid: d9def4eb908b1924f8c80f0b202205ae, type: 3}
+  - {fileID: 3767939002439145806, guid: 2aafafd3e397078488769d2dafd0103a, type: 3}
+  - {fileID: 4067540472234283541, guid: 029b4a02081a8eb469500f00b6802d8c, type: 3}
   spawnPozX: 0.1
-  spawnPozY: 2
-  spawnPozZ: -12.5
-  startDelay: 0.5
-  spawnInternal: 0.07
+  spawnPozY: 1.4
+  spawnPozZ: -12
+  startDelay: 1
+  spawnInternal: 1
 --- !u!4 &1303077700
 Transform:
   m_ObjectHideFlags: 0
