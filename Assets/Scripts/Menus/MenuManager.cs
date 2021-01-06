@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    public void OnPauseMenuClick()
+    {
+        Time.timeScale = 1;
+        GoToMenu(MenuName.Pause);
+    }
     public static void GoToMenu(MenuName name)
     {
         switch (name)

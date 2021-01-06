@@ -8,11 +8,6 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 0;
     }
-    public void OnPauseMenuClick()
-    {
-        Time.timeScale = 1;
-        MenuManager.GoToMenu(MenuName.Pause);
-    }
     public void OnResumeButtonClick()
     {
         Time.timeScale = 1;
