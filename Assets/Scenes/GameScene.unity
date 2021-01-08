@@ -550,7 +550,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 129154, guid: 4cbd23b3563dcc44ab5953c60c8f61a6, type: 3}
       propertyPath: m_Name
-      value: Plate.000
+      value: Plate
+      objectReference: {fileID: 0}
+    - target: {fileID: 129154, guid: 4cbd23b3563dcc44ab5953c60c8f61a6, type: 3}
+      propertyPath: m_TagString
+      value: Plate
       objectReference: {fileID: 0}
     - target: {fileID: 455784, guid: 4cbd23b3563dcc44ab5953c60c8f61a6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -644,7 +648,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &556948632
@@ -738,10 +742,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foodPrefabs:
-  - {fileID: 5270052339273272526, guid: 08e0e1c8217e99745bbd193385537d64, type: 3}
-  - {fileID: 7894889115659172670, guid: d9def4eb908b1924f8c80f0b202205ae, type: 3}
-  - {fileID: 3767939002439145806, guid: 2aafafd3e397078488769d2dafd0103a, type: 3}
-  - {fileID: 4067540472234283541, guid: 029b4a02081a8eb469500f00b6802d8c, type: 3}
+  - {fileID: 6519548280725906354, guid: ec946d8c7bce74aae9fc6419867f660c, type: 3}
+  - {fileID: 4570742542017726648, guid: 9f665873f5cb1411b90805ea55d69503, type: 3}
+  - {fileID: 1315368377447783268, guid: 906b6631767094ab89e3e3de255778d0, type: 3}
+  - {fileID: 7339599091634990063, guid: d249ad8b59e524d118bbf6668fe009dd, type: 3}
   spawnPozX: 0.1
   spawnPozY: 1.4
   spawnPozZ: -12

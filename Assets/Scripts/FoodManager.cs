@@ -21,7 +21,7 @@ public class FoodManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+       
     }
 
     void FoodMove()
@@ -30,7 +30,14 @@ public class FoodManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(-spawnPozX, spawnPozX), spawnPozY, spawnPozZ);
        
         Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation);
+
+        
     }
 
     
+
+
+
+
+
 }
