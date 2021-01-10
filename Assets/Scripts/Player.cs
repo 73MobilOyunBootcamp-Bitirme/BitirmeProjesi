@@ -29,4 +29,15 @@ public class Player : MonoBehaviour
 
         }
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.transform.tag == "Material")
+        {
+            Destroy(collision.rigidbody);
+            collision.transform.parent = this.transform;
+        }
+
+        Debug.Log(collision.gameObject.name);
+    }
 }
