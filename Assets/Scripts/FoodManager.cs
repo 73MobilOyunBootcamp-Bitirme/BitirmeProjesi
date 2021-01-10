@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class FoodManager : MonoBehaviour
 {
+    public static FoodManager instance;
+
     public GameObject[] foodPrefabs;
     public float spawnPozX = 0.3f;
     public float spawnPozY = 1.7f;
@@ -11,27 +13,48 @@ public class FoodManager : MonoBehaviour
     public float startDelay = 1.0f;
     public float spawnInternal = 1.0f;
 
-    
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+    }
+
     void Start()
     {
-        InvokeRepeating("FoodMove", startDelay, spawnInternal);
+        //InvokeRepeating("FoodMove", startDelay, spawnInternal);
+
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
        
     }
 
-    void FoodMove()
-    {
-        int foodIndex = Random.Range(0, foodPrefabs.Length);
-        Vector3 spawnPos = new Vector3(Random.Range(-spawnPozX, spawnPozX), spawnPozY, spawnPozZ);
-       
-        Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation);
+    int foodIndex = 0;
+    Vector3 spawnPos = Vector3.zero;
 
-        
+    public IEnumerator FoodMove()
+    {
+        while (GameManager.isGamestarted && !GameManager.isGameended) //Eğer oyun başladıysa ve oyun bitmediyse üretim yapılmaya devam edilir
+        {
+
+
+        yield return new WaitForSeconds(spawnInternal);
+
+            foodIndex = Random.Range(0, foodPrefabs.Length);
+            spawnPos.x = Random.Range(-spawnPozX, spawnPozX);
+            spawnPos.y = spawnPozY; 
+            spawnPos.z = spawnPozZ;
+
+            Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation, this.transform);
+
+        }
+
+
     }
 
     
