@@ -32,12 +32,16 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Material")
-        {
-            Destroy(collision.rigidbody);
-            collision.transform.parent = this.transform;
-        }
+        float offsetFactor = 0.1f;
+        if (collision.transform.tag == "Ekmek" || collision.gameObject.tag == "Material")
+            {
+                collision.transform.parent = this.transform;
 
+             collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position + collision.transform.up * offsetFactor;
+                //collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position;
+        }
+        Destroy(collision.rigidbody);
         Debug.Log(collision.gameObject.name);
+        
     }
 }
