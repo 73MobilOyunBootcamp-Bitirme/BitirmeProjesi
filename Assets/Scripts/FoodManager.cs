@@ -12,6 +12,7 @@ public class FoodManager : MonoBehaviour
     public float spawnPozZ = -12.0f;
     public float startDelay = 1.0f;
     public float spawnInternal = 1.0f;
+    public float foodspeed = 1.0f;
 
     private void Awake()
     {
@@ -52,12 +53,24 @@ public class FoodManager : MonoBehaviour
 
             Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation, this.transform);
 
+            
         }
 
-
+       
     }
 
-    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.tag == "Player" || collision.gameObject.tag == "Material")
+        {
+            //Destroy(collision.rigidbody);
+            collision.transform.parent = this.transform;
+
+            collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 1).position;
+        }
+
+        Debug.Log(collision.gameObject.name);
+    }
 
 
 

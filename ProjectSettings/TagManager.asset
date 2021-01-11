@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Plate
   - Material
+  - Ekmek
   layers:
   - Default
   - TransparentFX
