@@ -32,10 +32,12 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.transform.tag == "Material")
+        if(collision.transform.tag == "Ekmek" || collision.gameObject.tag == "Material")
         {
-            Destroy(collision.rigidbody);
+           //Destroy(collision.rigidbody);
             collision.transform.parent = this.transform;
+
+            collision.transform.position = collision.transform.parent.GetChild(transform.childCount-1).position;
         }
 
         Debug.Log(collision.gameObject.name);
