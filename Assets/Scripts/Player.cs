@@ -38,9 +38,11 @@ public class Player : MonoBehaviour
                 collision.transform.parent = this.transform;
 
              collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position + collision.transform.up * offsetFactor;
-                //collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position;
+            //collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position;
+            Destroy(collision.rigidbody);
+            this.transform.GetChild(this.transform.childCount - 2).GetComponent<BoxCollider>().enabled = false;
         }
-        Destroy(collision.rigidbody);
+        
         Debug.Log(collision.gameObject.name);
         
     }
