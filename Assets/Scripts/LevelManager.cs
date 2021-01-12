@@ -17,6 +17,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public List<GameObject> IcMalzeme = new List<GameObject>();
     public List<GameObject> LevelMalzeme = new List<GameObject>();
+    public List<GameObject> GameSandvic = new List<GameObject>();
 
 
     private void Awake()

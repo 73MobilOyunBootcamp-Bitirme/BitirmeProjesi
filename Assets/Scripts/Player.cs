@@ -41,9 +41,22 @@ public class Player : MonoBehaviour
             //collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position;
             Destroy(collision.rigidbody);
             this.transform.GetChild(this.transform.childCount - 2).GetComponent<BoxCollider>().enabled = false;
+
+            LevelManager.instance.GameSandvic.Add(collision.gameObject); //Oyuncunun hazırladığı sandviçe ekleme yapılıyor.
+            
+            Debug.Log(LevelManager.instance.GameSandvic.Count);
+
+            int lastIndex;
+            lastIndex = LevelManager.instance.GameSandvic.Count - 1;
+
+            if(lastIndex > 0  && LevelManager.instance.GameSandvic[lastIndex].tag == "Ekmek")
+            {
+                GameManager.instance.OnLevelFinished();
+            }
+
         }
-        
-        Debug.Log(collision.gameObject.name);
+
+        //Debug.Log(collision.gameObject.name);
         
     }
 }
