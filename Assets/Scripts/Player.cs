@@ -35,28 +35,36 @@ public class Player : MonoBehaviour
         float offsetFactor = 0.1f;
         if (collision.transform.tag == "Ekmek" || collision.gameObject.tag == "Material")
             {
-                collision.transform.parent = this.transform;
-
-             collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position + collision.transform.up * offsetFactor;
-            //collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position;
-            Destroy(collision.rigidbody);
-            this.transform.GetChild(this.transform.childCount - 2).GetComponent<BoxCollider>().enabled = false;
-
             LevelManager.instance.GameSandvic.Add(collision.gameObject); //Oyuncunun hazırladığı sandviçe ekleme yapılıyor.
-            
-            Debug.Log(LevelManager.instance.GameSandvic.Count);
 
-            int lastIndex;
-            lastIndex = LevelManager.instance.GameSandvic.Count - 1;
-
-            if(lastIndex > 0  && LevelManager.instance.GameSandvic[lastIndex].tag == "Ekmek")
+            if (LevelManager.instance.controlSandvics())
             {
                 GameManager.instance.OnLevelFinished();
+
+                collision.transform.parent = this.transform;
+
+                collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position + collision.transform.up * offsetFactor;
+                //collision.transform.position = collision.transform.parent.GetChild(transform.childCount - 2).position;
+                Destroy(collision.rigidbody);
+                this.transform.GetChild(this.transform.childCount - 2).GetComponent<BoxCollider>().enabled = false;
+            }
+            else
+            {
+                LevelManager.instance.GameSandvic.Remove(collision.gameObject); // eğer malzeme yanlışsa listeden silinir.
+                Destroy(collision.gameObject); //yanlış malzeme yok edilir. 
+                GameManager.PlayerLife--;
+                Debug.Log(GameManager.PlayerLife);
+
+                if (GameManager.PlayerLife <= 0)
+                {
+                    GameManager.instance.OnLevelFail();
+                }
+                GameManager.instance.IncreaseLife();
             }
 
         }
 
-        //Debug.Log(collision.gameObject.name);
+        
         
     }
 }
