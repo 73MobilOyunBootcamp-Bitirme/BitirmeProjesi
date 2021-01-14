@@ -767,8 +767,8 @@ MonoBehaviour:
   IcMalzeme:
   - {fileID: 7339599091634990063, guid: d249ad8b59e524d118bbf6668fe009dd, type: 3}
   - {fileID: 1315368377447783268, guid: 906b6631767094ab89e3e3de255778d0, type: 3}
-  - {fileID: 4570742542017726648, guid: 9f665873f5cb1411b90805ea55d69503, type: 3}
   - {fileID: 6519548280725906354, guid: ec946d8c7bce74aae9fc6419867f660c, type: 3}
+  - {fileID: 4570742542017726648, guid: 9f665873f5cb1411b90805ea55d69503, type: 3}
   LevelMalzeme: []
   GameSandvic: []
 --- !u!4 &369571318
