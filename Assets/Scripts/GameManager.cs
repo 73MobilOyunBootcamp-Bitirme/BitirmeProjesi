@@ -44,6 +44,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(1);
 
         isGamestarted = true;
+        isGameended = false;
 
         StartCoroutine(FoodManager.instance.FoodMove());
     }
@@ -60,12 +61,15 @@ public class GameManager : MonoBehaviour
         {
             OnLevelSuccessed();
         }
+
+        //PlayerLife = 3;
         
     }
 
     public void OnLevelSuccessed()
     {
         isGameended = true;
+        StopAllCoroutines();
         Destroy(FoodManager.instance.gameObject);
         winPanel.SetActive(true);
 
@@ -74,6 +78,7 @@ public class GameManager : MonoBehaviour
     public void OnLevelFail()
     {
         isGameended = true;
+        StopAllCoroutines();
         Destroy(FoodManager.instance.gameObject);
         LostPanel.SetActive(true);
     }
@@ -81,18 +86,23 @@ public class GameManager : MonoBehaviour
     public void nextButtonActive()
     {
         winPanel.SetActive(false);
+        isGamestarted = false;
         LevelManager.instance.LevelNumber++;
+        PlayerPrefs.SetInt("LevelNo", LevelManager.instance.LevelNumber);
         SceneManager.LoadScene(0);
         LevelText.text = "Level " + LevelManager.instance.LevelNumber;
-        Time.timeScale = 1;
+        PlayerLife = 3;
+        //Time.timeScale = 1;
     }
 
     public void restartButtonActive()
     {
+        isGamestarted = false;
         LostPanel.SetActive(false);
         SceneManager.LoadScene(0);
         LevelText.text = "Level " + LevelManager.instance.LevelNumber;
-        Time.timeScale = 1;
+        PlayerLife = 3;
+        //Time.timeScale = 1;
     }
 
     public void IncreaseLife()

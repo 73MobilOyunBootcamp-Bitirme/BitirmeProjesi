@@ -61,7 +61,7 @@ public class LevelManager : Singleton<LevelManager>
 
         for (int i = 0; i < MalzemeNumber; i++)
         {
-            LevelMalzeme.Add(IcMalzeme[Random.Range(1, IcMalzeme.Count-1)]);
+            LevelMalzeme.Add(IcMalzeme[Random.Range(1, IcMalzeme.Count)]);
         }
 
         LevelMalzeme.Add(IcMalzeme[0]);
