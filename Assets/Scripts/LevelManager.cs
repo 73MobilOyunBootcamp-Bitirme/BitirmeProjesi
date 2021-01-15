@@ -17,6 +17,7 @@ public class LevelManager : Singleton<LevelManager>
 
     public List<GameObject> IcMalzeme = new List<GameObject>();
     public List<GameObject> LevelMalzeme = new List<GameObject>();
+    public List<GameObject> GameSandvic = new List<GameObject>();
 
 
     private void Awake()
@@ -35,13 +36,14 @@ public class LevelManager : Singleton<LevelManager>
             LevelNumber = 1;
             PlayerPrefs.SetInt("LevelNo", LevelNumber); 
         }
+       
         SandvicMaker();
     }
 
     void Start()
     {
-       
-            
+        GameManager.instance.LevelText.text = "Level " + LevelNumber;
+
 
     }
 
@@ -52,14 +54,14 @@ public class LevelManager : Singleton<LevelManager>
 
     public void SandvicMaker()
     {
-        Debug.Log("sandviç oluşturuyor");
+        
         LevelMalzeme.Add(IcMalzeme[0]); // Ekmek 0. index olarak eklendi ve iç malzeme 0' da ekmek vardır.
 
         int MalzemeNumber = (int)(LevelNumber / 3) + 1;
 
         for (int i = 0; i < MalzemeNumber; i++)
         {
-            LevelMalzeme.Add(IcMalzeme[Random.Range(1, IcMalzeme.Count-1)]);
+            LevelMalzeme.Add(IcMalzeme[Random.Range(1, IcMalzeme.Count)]);
         }
 
         LevelMalzeme.Add(IcMalzeme[0]);
@@ -77,7 +79,7 @@ public class LevelManager : Singleton<LevelManager>
                 var obj = Instantiate(LevelMalzeme[i], CreatedSandvicParent.transform.position +
                 new Vector3(0, LevelMalzeme[i].transform.localScale.y / 2, 0) * i, Quaternion.identity,
                 CreatedSandvicParent.transform);
-
+                obj.name = obj.name.Replace("(Clone)" , "");
                 obj.GetComponent<Rigidbody>().useGravity = false;
                 obj.GetComponent<Rigidbody>().isKinematic = true;
             }
@@ -87,12 +89,28 @@ public class LevelManager : Singleton<LevelManager>
                 var obj = Instantiate(LevelMalzeme[i], CreatedSandvicParent.transform.position +
                 new Vector3(0, LevelMalzeme[i].transform.localScale.y, 0) * i, Quaternion.identity,
                 CreatedSandvicParent.transform);
-
+                obj.name = obj.name.Replace("(Clone)", "");
                 obj.GetComponent<Rigidbody>().useGravity = false;
                 obj.GetComponent<Rigidbody>().isKinematic = true;
             }
 
            
         }
+    }
+
+    public bool controlSandvics()
+    {
+        bool isEqual = true;
+
+        for (int i = 0; i < GameSandvic.Count; i++)
+        {
+            if (!LevelMalzeme[i].name.Equals(GameSandvic[i].name))
+            {
+                isEqual = false;
+                break;
+            }
+        }
+
+        return isEqual;
     }
 }

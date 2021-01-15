@@ -51,9 +51,9 @@ public class FoodManager : MonoBehaviour
             spawnPos.y = spawnPozY; 
             spawnPos.z = spawnPozZ;
 
-            Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation, this.transform);
+           var obj =  Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation, this.transform);
+           obj.name = obj.name.Replace("(Clone)", "");
 
-            
         }
 
        
@@ -71,7 +71,6 @@ public class FoodManager : MonoBehaviour
 
         Debug.Log(collision.gameObject.name);
     }
-
 
 
 
