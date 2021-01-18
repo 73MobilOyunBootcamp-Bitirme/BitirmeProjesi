@@ -99,7 +99,7 @@ public class GameManager : MonoBehaviour
     {
         isGamestarted = false;
         LostPanel.SetActive(false);
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(1);
         LevelText.text = "Level: " + LevelManager.instance.LevelNumber;
         PlayerLife = 3;
         //Time.timeScale = 1;
