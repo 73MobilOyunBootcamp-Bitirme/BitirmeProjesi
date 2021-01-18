@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
         LevelManager.instance.LevelNumber++;
         PlayerPrefs.SetInt("LevelNo", LevelManager.instance.LevelNumber);
         SceneManager.LoadScene(0);
-        LevelText.text = "Level " + LevelManager.instance.LevelNumber;
+        LevelText.text = "Level: " + LevelManager.instance.LevelNumber;
         PlayerLife = 3;
         //Time.timeScale = 1;
     }
@@ -99,8 +99,8 @@ public class GameManager : MonoBehaviour
     {
         isGamestarted = false;
         LostPanel.SetActive(false);
-        SceneManager.LoadScene(0);
-        LevelText.text = "Level " + LevelManager.instance.LevelNumber;
+        SceneManager.LoadScene(1);
+        LevelText.text = "Level: " + LevelManager.instance.LevelNumber;
         PlayerLife = 3;
         //Time.timeScale = 1;
     }
