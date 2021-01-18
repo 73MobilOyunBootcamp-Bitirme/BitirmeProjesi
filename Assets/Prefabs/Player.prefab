@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027372955193697495}
   m_LocalRotation: {x: -0.020972982, y: 0.050245643, z: 0.019203305, w: 0.998332}
-  m_LocalPosition: {x: 0.0067276508, y: -0.16532576, z: -0.011045806}
+  m_LocalPosition: {x: 0.0426, y: -0.164, z: -0.0147}
   m_LocalScale: {x: 0.0010000004, y: 0.0010000004, z: 0.0010000003}
   m_Children: []
   m_Father: {fileID: 4803371561637494163}
@@ -96,7 +96,7 @@ GameObject:
   m_TagString: Plate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &4982029577563169289
 Transform:
@@ -105,8 +105,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4982029577563107043}
-  m_LocalRotation: {x: -0.30472502, y: -0.48356718, z: -0.5417929, w: 0.6162516}
-  m_LocalPosition: {x: 0.019727772, y: 0.10267413, z: -0.015046053}
+  m_LocalRotation: {x: -0.30472502, y: -0.48356715, z: -0.54179287, w: 0.6162516}
+  m_LocalPosition: {x: 0.055600137, y: 0.10399983, z: -0.018700296}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4803371561637494163}
@@ -198,7 +198,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5324046755768952617}
   m_LocalRotation: {x: 0.27993685, y: 0.5053011, z: 0.5065555, w: 0.6400842}
-  m_LocalPosition: {x: 0, y: 0.55, z: -12.5}
+  m_LocalPosition: {x: 0.006, y: 0.31, z: -12.406}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4008278015313866683}
